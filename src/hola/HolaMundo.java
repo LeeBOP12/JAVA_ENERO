@@ -11,6 +11,7 @@ package hola;
 public class HolaMundo {
     public static void main(String[] args) {
         System.out.println("HOLA MUNDO :D");
-        System.out.println("VAVAVAVAVAVAVAVAVA");
+        System.out.println("==== DATOS ====");
+        System.out.println("Lee Brandon\nPeru");
     }
 }
