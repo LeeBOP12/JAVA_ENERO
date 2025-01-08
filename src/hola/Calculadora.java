@@ -147,7 +147,7 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_SOperacionActionPerformed
 
     private void TNUM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TNUM1ActionPerformed
-        double num1 = Double.parseDouble(TNUM1.getText()); 
+
     }//GEN-LAST:event_TNUM1ActionPerformed
 
     private void TNUM2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TNUM2ActionPerformed
