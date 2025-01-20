@@ -163,7 +163,7 @@ public class Calculadora extends javax.swing.JFrame {
        double num2 = Double.parseDouble(TNUM2.getText());
        double resultado = 0;
        int opcion = SOperacion.getSelectedIndex();
-       MOSTRAR.setText("Primer Numero: "+num1+"\n");
+       MOSTRAR.setText("Primer Numero: "+num1+"\n"); //de mas
        MOSTRAR.append("Segundo Numero: "+num2);
        
         switch (opcion) {
