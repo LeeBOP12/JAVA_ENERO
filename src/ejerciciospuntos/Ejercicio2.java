@@ -4,6 +4,8 @@
  */
 package ejerciciospuntos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lee Brandon
@@ -13,8 +15,12 @@ public class Ejercicio2 extends javax.swing.JFrame {
     /**
      * Creates new form Ejercicio1
      */
+    int numeros[];
+    int indice=0;
     public Ejercicio2() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        numeros = new int[5];
     }
 
     /**
@@ -28,9 +34,12 @@ public class Ejercicio2 extends javax.swing.JFrame {
 
         FONDO = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Sumar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Mostrar = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        Numero = new javax.swing.JTextField();
+        Agregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,13 +51,13 @@ public class Ejercicio2 extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("SUMA DE UN ARRAY");
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("INICIAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Sumar.setBackground(new java.awt.Color(153, 153, 153));
+        Sumar.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        Sumar.setForeground(new java.awt.Color(0, 0, 0));
+        Sumar.setText("SUMAR");
+        Sumar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SumarActionPerformed(evt);
             }
         });
 
@@ -57,66 +66,100 @@ public class Ejercicio2 extends javax.swing.JFrame {
         Mostrar.setRows(5);
         jScrollPane1.setViewportView(Mostrar);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Ingrese Numero:");
+
+        Numero.setBackground(new java.awt.Color(153, 153, 153));
+
+        Agregar.setBackground(new java.awt.Color(153, 153, 153));
+        Agregar.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        Agregar.setForeground(new java.awt.Color(0, 0, 0));
+        Agregar.setText("AGREGAR");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout FONDOLayout = new javax.swing.GroupLayout(FONDO);
         FONDO.setLayout(FONDOLayout);
         FONDOLayout.setHorizontalGroup(
             FONDOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FONDOLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addContainerGap(29, Short.MAX_VALUE))
-            .addGroup(FONDOLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
                 .addGroup(FONDOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                    .addGroup(FONDOLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(FONDOLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Numero))
+                    .addGroup(FONDOLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Sumar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(FONDOLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         FONDOLayout.setVerticalGroup(
             FONDOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FONDOLayout.createSequentialGroup()
                 .addGap(9, 9, 9)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addGroup(FONDOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(Numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(FONDOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Sumar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FONDO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(FONDO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(FONDO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(FONDO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumarActionPerformed
         /*
         2. Sumar los elementos de un array y mostrar el resultado en un JFrame
         En este ejercicio, se pedirá al usuario que ingrese los elementos del array y se calculará la suma de esos elementos.
-
          */
-        int suma=0;
-        int numeros[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        Mostrar.setText("Tamaño de array: " + numeros.length);
-        Mostrar.append("\nNumeros del array: \n");
+        int suma = 0;
         for (int i = 0; i < numeros.length; i++) {
-            Mostrar.append(numeros[i]+" - ");
-            suma+=numeros[i]; 
+            suma+=numeros[i];
         }
-        
-        Mostrar.append("\nSuma del array: "+suma);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Mostrar.append("Resultado de suma: "+suma);
+    }//GEN-LAST:event_SumarActionPerformed
+
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+        if (indice < numeros.length) {
+            numeros[indice] = Integer.parseInt(Numero.getText());
+            indice++;
+            Numero.setText("");
+        } else {
+            JOptionPane.showMessageDialog(null, "< VECTOR LLENO >");
+        }
+    }//GEN-LAST:event_AgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,10 +198,13 @@ public class Ejercicio2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agregar;
     private javax.swing.JPanel FONDO;
     private javax.swing.JTextArea Mostrar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField Numero;
+    private javax.swing.JButton Sumar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
