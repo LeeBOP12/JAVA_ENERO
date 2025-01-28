@@ -72,6 +72,11 @@ public class Ejercicio3 extends javax.swing.JFrame {
         jLabel2.setText("Ingrese Numero:");
 
         Numero.setBackground(new java.awt.Color(153, 153, 153));
+        Numero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumeroActionPerformed(evt);
+            }
+        });
 
         Agregar.setBackground(new java.awt.Color(153, 153, 153));
         Agregar.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -161,6 +166,10 @@ public class Ejercicio3 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "< VECTOR LLENO >");
         }
     }//GEN-LAST:event_AgregarActionPerformed
+
+    private void NumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NumeroActionPerformed
 
     /**
      * @param args the command line arguments
