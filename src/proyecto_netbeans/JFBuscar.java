@@ -132,7 +132,8 @@ public class JFBuscar extends javax.swing.JFrame {
 
     private void BuscarBBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBBActionPerformed
         int opcion = BuscarCB.getSelectedIndex();
-        switch (opcion) {
+        if (!(NombreT.getText().equals("") || GarantiaT.getText().equals(""))) {
+            switch (opcion) {
             case 0:
                 String nombre = NombreT.getText();
                 buscarNombre(nombre);
@@ -143,6 +144,9 @@ public class JFBuscar extends javax.swing.JFrame {
                 break;
             default:
                 JOptionPane.showMessageDialog(null, "< OPCION INVALIDA ");
+        }
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR: CUADRO EN BLANCO");
         }
     }//GEN-LAST:event_BuscarBBActionPerformed
 
